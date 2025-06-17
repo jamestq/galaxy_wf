@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  galaxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: galaxy_instance
+    ports:
+      - "8080:80"
+      - "8021:21"
+      - "8022:22"
+    volumes:
+      - ./galaxy_storage:/export
